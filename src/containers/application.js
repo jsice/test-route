@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
+import Menu from './menu'
 
 const ApplicationsDetail = ({ match }) => (
   <div>
@@ -22,12 +23,7 @@ const Applications = ({ match }) => (
 
 const AppCon = ({ match }) => (
   <div>
-    <ul>
-      <li><Link to="/request"><button>Add new listing</button></Link></li>
-      <li><Link to="/properties">Applications</Link></li>
-      <li><Link to="/getting-started">Getting Started</Link></li>
-    </ul>
-    <hr />
+    <Menu />
 
     <Switch>
       <Route exact path={`${match.url}`} component={Applications} />
