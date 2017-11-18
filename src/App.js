@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Menu from './containers/menu'
+import Route from './containers/route'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <Menu />
+      <Route />
     );
   }
 }

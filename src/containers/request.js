@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 import Applications from './application'
 
 const ReqApp = ({ match }) => (
@@ -20,13 +20,15 @@ const Request = ({ match }) => (
     <ul>
       <li><Link to="/properties">Dashboard</Link></li>
       <li><Link to={`${match.url}/application/hashkey`}><button>Next</button></Link></li>
-
-      <Route path={`${match.url}/:id/:hash`} component={ReqApp} />
-    
     </ul>
   </div>
 )
 
 export const ReqCon = ({ match }) => (
-  <Route path={} />
+  <div>
+    <Switch>
+      <Route exact path={`${match.url}`} component={Request} />
+      <Route path={`${match.url}/application/hashkey`} component={ReqApp} />
+    </Switch>
+  </div>
 )
